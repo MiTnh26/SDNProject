@@ -4,6 +4,7 @@ import { NavLink, Link, useNavigate } from 'react-router-dom'
 import Logo from '../../assets/images/logo.png'
 import "./header.css"
 import { AuthContext } from '../../context/AuthContext'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 const nav__links = [
    {
@@ -63,11 +64,11 @@ const Header = () => {
                         <img src={Logo} alt="Logo" />
                      </Link>
                   </div>
-                  
+
                   {/* ========================== */}
 
                   {/* ========== MENU START ========== */}
-                  
+
                   <div className="navigation" ref={menuRef} onClick={toggleMenu}>
                      <ul className="menu d-flex align-items-center gap-5">
                         {
@@ -81,18 +82,31 @@ const Header = () => {
                         }
                      </ul>
                   </div>
-                  
+
                   {/* ================================ */}
 
                   <div className="nav__right d-flex align-items-center gap-5">
                      <div className="nav__btns d-flex align-items-center gap-2">
                         {
                            user ? <>
-                              <h5 className='mb-0'>{user.username}</h5>
-                              <Button className='btn btn-dark' onClick={logout}>Logout</Button>
+                              <Dropdown>
+                                 <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
+                                    {user.username}
+                                 </Dropdown.Toggle>
+
+                                 <Dropdown.Menu>
+                                    <Dropdown.Item as={Link} to="/profile">Profile</Dropdown.Item>
+                                    <Dropdown.Divider />
+                                    <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
+                                 </Dropdown.Menu>
+                              </Dropdown>
                            </> : <>
-                              <Button className='btn primary__btn'><Link to='/login'>Login</Link></Button>
-                              <Button className='btn primary__btn'><Link to='/register'>Register</Link></Button>
+                              <Button className='btn primary__btn'>
+                                 <Link to='/login' className='link-btn'>Login</Link>
+                              </Button>
+                              <Button className='btn primary__btn'>
+                                 <Link to='/register' className='link-btn'>Register</Link>
+                              </Button>
                            </>
                         }
                      </div>

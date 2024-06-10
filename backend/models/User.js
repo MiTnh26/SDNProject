@@ -7,6 +7,15 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    fullname: {
+      type: String
+    },
+    address: {
+      type: String
+    },
+    phone: {
+      type: String
+    },
     email: {
       type: String,
       required: true,
@@ -17,7 +26,7 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
 
-    photo: {
+    avatar: {
       type: String,
     },
 
