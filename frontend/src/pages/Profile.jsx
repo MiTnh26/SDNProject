@@ -7,7 +7,14 @@ const Profile = () => {
     const { user } = useContext(AuthContext);
     const [profile, setProfile] = useState({});
     const [isEditing, setIsEditing] = useState(false);
-    const [formData, setFormData] = useState({ username: '', email: '', avatar: null });
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        avatar: null,
+        fullname: '',
+        address: '',
+        phone: ''
+    });
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -19,6 +26,9 @@ const Profile = () => {
                     username: res.data.data.username,
                     email: res.data.data.email,
                     avatar: res.data.data.avatar,
+                    fullname: res.data.data.fullname,
+                    address: res.data.data.address,
+                    phone: res.data.data.phone,
                 });
             } catch (err) {
                 console.error(err);
@@ -41,6 +51,9 @@ const Profile = () => {
             const formDataToSend = new FormData();
             formDataToSend.append('username', formData.username);
             formDataToSend.append('email', formData.email);
+            formDataToSend.append('fullname', formData.fullname);
+            formDataToSend.append('address', formData.address);
+            formDataToSend.append('phone', formData.phone);
             if (formData.avatar && typeof formData.avatar !== 'string') {
                 formDataToSend.append('avatar', formData.avatar);
             }
@@ -68,6 +81,12 @@ const Profile = () => {
                     <input type="text" name="username" value={formData.username} onChange={handleChange} />
                     <label>Email</label>
                     <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" value={formData.fullname} onChange={handleChange} />
+                    <label>Address</label>
+                    <input type="text" name="address" value={formData.address} onChange={handleChange} />
+                    <label>Phone</label>
+                    <input type="text" name="phone" value={formData.phone} onChange={handleChange} />
                     <label>Avatar</label>
                     <input type="file" name="avatar" onChange={handleChange} />
 
@@ -78,6 +97,9 @@ const Profile = () => {
                 <div>
                     <p>Username: {profile.username}</p>
                     <p>Email: {profile.email}</p>
+                    <p>Full Name: {profile.fullname}</p>
+                    <p>Address: {profile.address}</p>
+                    <p>Phone: {profile.phone}</p>
                     <div>
                         <img src={`${BASE_URL}/user_images/${profile.avatar}`} alt="Avatar" />
                     </div>
