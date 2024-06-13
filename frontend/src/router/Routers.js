@@ -11,6 +11,7 @@ import AboutPage from '../pages/AboutPage'
 import CopyrightPage from '../pages/CopyrightPage'
 import ForgotPassword from '../pages/ForgetPassWord'
 import Profile from '../pages/Profile'
+import MyBooking from '../pages/MyBooking'
 
 const Routers = () => {
    return (
@@ -28,6 +29,7 @@ const Routers = () => {
          <Route path='*' element={<Home />} />
          <Route path='reset-password' element={<ForgotPassword />} />
          <Route path="/profile" element={<Profile />} />
+         <Route path="/mybooking" element={<MyBooking />} />
       </Routes>
    )
 }

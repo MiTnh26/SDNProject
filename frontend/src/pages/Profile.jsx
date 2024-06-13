@@ -27,17 +27,18 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchProfile = async () => {
-            if (!user || !user._id) return; // Kiểm tra xem user có tồn tại không
+            if (!user || !user._id) return;
             try {
                 const res = await axios.get(`${BASE_URL}/users/${user._id}`, { withCredentials: true });
-                setProfile(res.data.data);
+                const profileData = res.data.data;
+                setProfile(profileData);
                 setFormData({
-                    username: res.data.data.username,
-                    email: res.data.data.email,
-                    avatar: res.data.data.avatar,
-                    fullname: res.data.data.fullname,
-                    address: res.data.data.address,
-                    phone: res.data.data.phone,
+                    username: profileData.username,
+                    email: profileData.email,
+                    avatar: profileData.avatar,
+                    fullname: profileData.fullname,
+                    address: profileData.address,
+                    phone: profileData.phone,
                 });
             } catch (err) {
                 console.error(err);
@@ -93,7 +94,7 @@ const Profile = () => {
         }
 
         try {
-            const res = await axios.put(`${BASE_URL}/auth/${user._id}/change-password`, passwordData, {
+            await axios.put(`${BASE_URL}/auth/${user._id}/change-password`, passwordData, {
                 withCredentials: true,
                 headers: {
                     'Content-Type': 'application/json'
@@ -103,6 +104,11 @@ const Profile = () => {
             setPasswordSuccess('Password changed successfully');
             setIsChangingPassword(false);
             setPasswordError('');
+            setPasswordData({
+                currentPassword: '',
+                newPassword: '',
+                confirmPassword: ''
+            });
         } catch (err) {
             setPasswordError('Error changing password: ' + err.response.data.message);
         }
@@ -183,7 +189,9 @@ const Profile = () => {
                         <p><strong>Phone:</strong> {profile.phone}</p>
                     </Col>
                     <Col md={6}>
-                        <Image src={`${BASE_URL}/user_images/${profile.avatar}`} alt="Avatar" roundedCircle />
+                        {profile.avatar && (
+                            <Image src={`${BASE_URL}/public/user_images/${profile.avatar}`} alt="Avatar" roundedCircle />
+                        )}
                     </Col>
                     <Col md={12}>
                         <Button className="me-2" variant="primary" onClick={() => setIsEditing(true)}>

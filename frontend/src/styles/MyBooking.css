@@ -1,0 +1,19 @@
+.booking-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.booking-list li {
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.booking-list p {
+  margin: 5px 0;
+}
+
+.booking-list .btn {
+  margin-right: 10px;
+}
