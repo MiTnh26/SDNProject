@@ -1,67 +1,53 @@
-import React, { useState, useContext } from 'react';
-import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap';
-import '../styles/login.css';
-import { Link, useNavigate } from 'react-router-dom';
-import registerImg from '../assets/images/login.png';
-import userIcon from '../assets/images/user.png';
-import { AuthContext } from '../context/AuthContext';
-import { BASE_URL } from '../utils/config';
+import React, { useState, useContext } from 'react'
+import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
+import '../styles/login.css'
+import { Link, useNavigate } from 'react-router-dom'
+import registerImg from '../assets/images/login.png'
+import userIcon from '../assets/images/user.png'
+import { AuthContext } from '../context/AuthContext'
+import { BASE_URL } from '../utils/config'
 
 const Register = () => {
    const [credentials, setCredentials] = useState({
-      username: '',
-      fullname: '',
-      address: '',
-      phone: '',
-      email: '',
-      password: '',
-      avatar: null, // Thay đổi từ string thành null để xử lý file
-   });
+      userName: undefined,
+      email: undefined,
+      password: undefined
+   })
 
-   const { dispatch } = useContext(AuthContext);
-   const navigate = useNavigate();
+   const {dispatch} = useContext(AuthContext)
+   const navigate = useNavigate()
 
-   const handleChange = (e) => {
-      const { id, value, files } = e.target;
-      if (id === 'avatar') {
-         setCredentials((prev) => ({ ...prev, avatar: files[0] }));
-      } else {
-         setCredentials((prev) => ({ ...prev, [id]: value }));
-      }
-   };
+   const handleChange = e => {
+      setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
+   }
 
-   const handleClick = async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData();
-      for (const key in credentials) {
-         formData.append(key, credentials[key]);
-      }
+   const handleClick = async e => {
+      e.preventDefault()
 
       try {
          const res = await fetch(`${BASE_URL}/auth/register`, {
-            method: 'POST',
-            body: formData,
-         });
+            method:'post',
+            headers: {
+               'content-type':'application/json'
+            },
+            body: JSON.stringify(credentials)
+         })
+         const result = await res.json()
 
-         const result = await res.json();
+         if(!res.ok) alert(result.message)
 
-         if (!res.ok) {
-            alert(result.message);
-         } else {
-            dispatch({ type: 'REGISTER_SUCCESS' });
-            navigate('/login');
-         }
-      } catch (err) {
-         alert(err.message);
+         dispatch({type:'REGISTER_SUCCESS'})
+         navigate('/login')
+      } catch(err) {
+         alert(err.message)
       }
-   };
+   }
 
    return (
       <section>
          <Container>
             <Row>
-               <Col lg="8" className="m-auto">
+               <Col lg='8' className='m-auto'>
                   <div className="login__container d-flex justify-content-between">
                      <div className="login__img">
                         <img src={registerImg} alt="" />
@@ -75,78 +61,24 @@ const Register = () => {
 
                         <Form onSubmit={handleClick}>
                            <FormGroup>
-                              <input
-                                 type="text"
-                                 placeholder="Username"
-                                 id="username"
-                                 onChange={handleChange}
-                                 required
-                              />
+                              <input type="text" placeholder='Username' id='username' onChange={handleChange} required />
                            </FormGroup>
                            <FormGroup>
-                              <input
-                                 type="text"
-                                 placeholder="Full Name"
-                                 id="fullname"
-                                 onChange={handleChange}
-                              />
+                              <input type="email" placeholder='Email' id='email' onChange={handleChange} required />
                            </FormGroup>
                            <FormGroup>
-                              <input
-                                 type="text"
-                                 placeholder="Address"
-                                 id="address"
-                                 onChange={handleChange}
-                              />
+                              <input type="password" placeholder='Password' id='password' onChange={handleChange} required />
                            </FormGroup>
-                           <FormGroup>
-                              <input
-                                 type="text"
-                                 placeholder="Phone"
-                                 id="phone"
-                                 onChange={handleChange}
-                              />
-                           </FormGroup>
-                           <FormGroup>
-                              <input
-                                 type="email"
-                                 placeholder="Email"
-                                 id="email"
-                                 onChange={handleChange}
-                                 required
-                              />
-                           </FormGroup>
-                           <FormGroup>
-                              <input
-                                 type="password"
-                                 placeholder="Password"
-                                 id="password"
-                                 onChange={handleChange}
-                                 required
-                              />
-                           </FormGroup>
-                           <FormGroup>
-                              <input
-                                 type="file"
-                                 id="avatar"
-                                 onChange={handleChange}
-                              />
-                           </FormGroup>
-
-                           <Button className="btn secondary__btn auth__btn" type="submit">
-                              Create Account
-                           </Button>
+                           <Button className='btn secondary__btn auth__btn' type='submit'>Create Account</Button>
                         </Form>
-                        <p>
-                           Already have an account? <Link to="/login">Login</Link>
-                        </p>
+                        <p>Already have an account? <Link to='/login'>Login</Link></p>
                      </div>
                   </div>
                </Col>
             </Row>
          </Container>
       </section>
-   );
-};
+   )
+}
 
-export default Register;
+export default Register
