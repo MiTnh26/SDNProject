@@ -104,7 +104,7 @@ const Header = () => {
                                     <Dropdown.Item as={Link} to='/profile'>
                                        Profile
                                     </Dropdown.Item>
-                                    <Dropdown.Item as={Link} to='/mybooking'>
+                                    <Dropdown.Item as={Link} to='/my-booking'>
                                        MyBooking
                                     </Dropdown.Item>
                                     <Dropdown.Divider />

@@ -6,7 +6,7 @@ import upload from '../middleware/upload.js';
 const router = express.Router();
 
 // Update user with file upload
-router.put('/:id', verifyUser, upload.any(), updateUser);
+router.put('/:id', verifyUser, upload.single('avatar'), updateUser);
 
 // Delete user
 router.delete('/:id', verifyUser, deleteUser);

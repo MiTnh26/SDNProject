@@ -190,7 +190,11 @@ const Profile = () => {
                     </Col>
                     <Col md={6}>
                         {profile.avatar && (
-                            <Image src={`${BASE_URL}/public/user_images/${profile.avatar}`} alt="Avatar" roundedCircle />
+                            <Image src={`${BASE_URL}/${profile.avatar}`}
+                                alt={profile.avatar}
+                                height={100}
+                                width={100}
+                                roundedCircle />
                         )}
                     </Col>
                     <Col md={12}>

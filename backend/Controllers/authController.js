@@ -4,10 +4,10 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config();
 
-// User register
+// Đăng ký người dùng
 export const register = async (req, res) => {
    try {
-      // Hashing password
+      // Hash mật khẩu
       const salt = bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(req.body.password, salt);
 
@@ -18,15 +18,14 @@ export const register = async (req, res) => {
          fullname: req.body.fullname,
          address: req.body.address,
          phone: req.body.phone,
-         avatar: req.body.avatar,
-         // role: req.body.role || 'user', // Default role to 'user' if not provided
+         avatar: 'user_images/' + req.file.filename, // Lưu đường dẫn ảnh nếu được upload
       });
 
       await newUser.save();
 
-      res.status(200).json({ success: true, message: "Successfully created!" });
+      res.status(200).json({ success: true, message: "Đăng ký thành công!" });
    } catch (error) {
-      res.status(500).json({ success: false, message: "Failed to create! Try again." });
+      res.status(500).json({ success: false, message: "Đăng ký thất bại! Vui lòng thử lại." });
    }
 };
 
@@ -91,11 +90,10 @@ export const resetPassword = async (req, res) => {
    }
 };
 
-// Update user profile
 export const updateUserProfile = async (req, res) => {
    try {
       const { userId } = req.params;
-      const { username, email, fullname, address, phone, avatar } = req.body;
+      const { username, email, fullname, address, phone } = req.body;
 
       // Find the user by ID
       const user = await User.findById(userId);
@@ -105,21 +103,27 @@ export const updateUserProfile = async (req, res) => {
          return res.status(404).json({ success: false, message: 'User not found!' });
       }
 
-      // Update the user's profile
+      // Update user's profile
       user.username = username || user.username;
       user.email = email || user.email;
       user.fullname = fullname || user.fullname;
       user.address = address || user.address;
       user.phone = phone || user.phone;
-      user.avatar = avatar || user.avatar;
+
+      // Update avatar (if uploaded)
+      if (req.file) {
+         user.avatar = req.file.path;
+      }
 
       await user.save();
 
       res.status(200).json({ success: true, message: "Profile updated successfully!", data: user });
    } catch (error) {
+      console.error(error); // Log error for debugging
       res.status(500).json({ success: false, message: "Failed to update profile. Please try again." });
    }
 };
+
 
 //changePassword 
 export const changePassword = async (req, res) => {

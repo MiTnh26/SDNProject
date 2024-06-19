@@ -1,0 +1,183 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "password123",
+      "avatar": "user_images/1718658557623-897172815-ava1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "password123",
+      "avatar": "user_images/1718658557623-897172815-ava2.jpg"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "userId": "1",
+      "tourId": "1",
+      "date": "2024-07-01",
+      "status": "confirmed"
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "tourId": "2",
+      "date": "2024-08-15",
+      "status": "pending"
+    },
+    {
+      "id": "3",
+      "userId": "1",
+      "tourId": "2",
+      "date": "2024-07-10",
+      "status": "confirmed"
+    },
+    {
+      "id": "4",
+      "userId": "1",
+      "tourId": "3",
+      "date": "2024-09-20",
+      "status": "pending"
+    }
+  ],
+  "tours": [
+    {
+      "id": "1",
+      "title": "Tour to Paris",
+      "city": "Paris",
+      "address": "123 Champs-Élysées",
+      "distance": 5,
+      "photo": "tour-images/tour-img01.jpg",
+      "desc": "A wonderful tour to the city of lights.",
+      "price": 1000,
+      "maxGroupSize": 10,
+      "reviews": [
+        "1",
+        "2",
+        "4",
+        "72b7",
+        "f538"
+      ],
+      "featured": true
+    },
+    {
+      "id": "2",
+      "title": "Tour to Tokyo",
+      "city": "Tokyo",
+      "address": "456 Shibuya",
+      "distance": 10,
+      "photo": "tour-images/tour-img02.jpg",
+      "desc": "Experience the vibrant culture of Tokyo.",
+      "price": 1500,
+      "maxGroupSize": 15,
+      "reviews": [
+        "3",
+        "7f41"
+      ],
+      "featured": false
+    },
+    {
+      "id": "3",
+      "title": "Tour to New York",
+      "city": "New York",
+      "address": "789 Broadway",
+      "distance": 8,
+      "photo": "tour-images/tour-img03.jpg",
+      "desc": "Discover the iconic landmarks of New York City.",
+      "price": 1200,
+      "maxGroupSize": 12,
+      "reviews": []
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "1",
+      "tourId": "1",
+      "rating": 5,
+      "comment": "Amazing tour, highly recommend!"
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "tourId": "1",
+      "rating": 4,
+      "comment": "Great experience, but a bit expensive."
+    },
+    {
+      "id": "3",
+      "userId": "1",
+      "tourId": "2",
+      "rating": 5,
+      "comment": "Tokyo was fantastic!"
+    },
+    {
+      "id": "4",
+      "userId": "1",
+      "tourId": "1",
+      "rating": 4,
+      "comment": "Paris tour was excellent!"
+    },
+    {
+      "id": "5",
+      "userId": "1",
+      "tourId": "1",
+      "rating": 3,
+      "comment": "ok"
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "tourId": "2",
+      "rating": 3,
+      "comment": "kjjk"
+    },
+    {
+      "id": "7",
+      "userId": "1",
+      "tourId": "1",
+      "rating": 5,
+      "comment": "ok"
+    },
+    {
+      "id": "8",
+      "userId": "1",
+      "tourId": "1",
+      "rating": 5,
+      "comment": "okk"
+    },
+    {
+      "id": "9",
+      "userId": "1",
+      "tourId": "3",
+      "rating": 5,
+      "comment": "rhrhr"
+    },
+    {
+      "id": "10",
+      "userId": "1",
+      "tourId": "3",
+      "rating": 5,
+      "comment": "4h4h"
+    },
+    {
+      "id": "11",
+      "userId": "1",
+      "tourId": "3",
+      "rating": 4,
+      "comment": "54h5h"
+    },
+    {
+      "id": "a105",
+      "userId": "1",
+      "tourId": "1",
+      "rating": 4,
+      "comment": "gtcv"
+    }
+  ]
+}
