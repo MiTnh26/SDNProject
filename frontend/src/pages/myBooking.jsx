@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 
+
 const MyBookings = () => {
     const [bookings, setBookings] = useState([]);
     const [tours, setTours] = useState({});
@@ -14,10 +15,10 @@ const MyBookings = () => {
         const fetchData = async () => {
             try {
                 const [bookingsResponse, toursResponse, reviewsResponse, usersResponse] = await Promise.all([
-                    axios.get('http://localhost:5000/bookings'),
-                    axios.get('http://localhost:5000/tours'),
-                    axios.get('http://localhost:5000/reviews'),
-                    axios.get('http://localhost:5000/users')
+                    axios.get('http://localhost:8000/bookings'),
+                    axios.get('http://localhost:8000/tours'),
+                    axios.get('http://localhost:8000/reviews'),
+                    axios.get('http://localhost:8000/users')
                 ]);
 
                 setBookings(bookingsResponse.data);
@@ -58,7 +59,7 @@ const MyBookings = () => {
 
     const handleCancelBooking = async bookingId => {
         try {
-            const response = await axios.delete(`http://localhost:5000/bookings/${bookingId}`);
+            const response = await axios.delete(`http://localhost:8000/bookings/${bookingId}`);
             if (response.status === 204) {
                 setBookings(bookings.filter(booking => booking.id !== bookingId));
             } else {
@@ -90,7 +91,7 @@ const MyBookings = () => {
                 comment: newComment
             };
 
-            const response = await axios.post('http://localhost:5000/reviews', newReview);
+            const response = await axios.post('http://localhost:8000/reviews', newReview);
 
             if (response.status === 201) {
                 const addedReview = response.data;

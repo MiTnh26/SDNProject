@@ -18,7 +18,7 @@ export const register = async (req, res) => {
          fullname: req.body.fullname,
          address: req.body.address,
          phone: req.body.phone,
-         avatar: 'user_images/' + req.file.filename, // Lưu đường dẫn ảnh nếu được upload
+         // avatar: 'user_images/' + req.file.filename, // Lưu đường dẫn ảnh nếu được upload
       });
 
       await newUser.save();

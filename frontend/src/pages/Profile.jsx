@@ -49,7 +49,7 @@ const Profile = () => {
 
     const handleChange = (e) => {
         const { name, value, files } = e.target;
-        if (name === 'avatar') {
+        if (name === 'avatar' && files.length > 0) {
             setFormData({ ...formData, [name]: files[0] });
         } else {
             setFormData({ ...formData, [name]: value });
@@ -110,7 +110,7 @@ const Profile = () => {
                 confirmPassword: ''
             });
         } catch (err) {
-            setPasswordError('Error changing password: ' + err.response.data.message);
+            setPasswordError('Error changing password: ' + (err.response?.data?.message || err.message));
         }
     };
 
@@ -190,11 +190,12 @@ const Profile = () => {
                     </Col>
                     <Col md={6}>
                         {profile.avatar && (
-                            <Image src={`${BASE_URL}/${profile.avatar}`}
-                                alt={profile.avatar}
+                            <Image
+                                src={profile.avatar}
+                                alt="Profile Avatar"
                                 height={100}
                                 width={100}
-                                roundedCircle />
+                            />
                         )}
                     </Col>
                     <Col md={12}>

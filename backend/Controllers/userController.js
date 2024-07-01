@@ -23,10 +23,10 @@ export const updateUser = async (req, res) => {
 export const createUser = async (req, res) => {
    const newUser = new User(req.body);
    console.log(req.body);
-   if (req.file) {
-      const imagePath = 'user_images/' + req.file.filename; // Đường dẫn tương đối đến ảnh
-      newUser.avatar = imagePath; // Lưu đường dẫn của tệp ảnh
-   }
+   // if (req.file) {
+   //    const imagePath = 'user_images/' + req.file.filename; // Đường dẫn tương đối đến ảnh
+   //    newUser.avatar = imagePath; // Lưu đường dẫn của tệp ảnh
+   // }
 
    try {
       const savedUser = await newUser.save();

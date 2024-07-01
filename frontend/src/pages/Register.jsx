@@ -125,13 +125,7 @@ const Register = () => {
                                  required
                               />
                            </FormGroup>
-                           <FormGroup>
-                              <input
-                                 type="file"
-                                 id="avatar"
-                                 onChange={handleChange}
-                              />
-                           </FormGroup>
+
 
                            <Button className="btn secondary__btn auth__btn" type="submit">
                               Create Account
