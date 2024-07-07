@@ -1,68 +1,71 @@
-import User from '../models/User.js'
+import User from '../models/User.js';
+import path from 'path';
 
-//Create new User
-export const createUser = async (req, res) => {
-   const newUser = new User(req.body)
-
-   try {
-      const savedUser = await newUser.save()
-
-      res.status(200).json({ success: true, message: 'Successfully created', data: savedUser })
-   } catch (error) {
-      res.status(500).json({ success: true, message: 'Failed to create. Try again!' })
-   }
-}
-
-//Update User
+// Update User
 export const updateUser = async (req, res) => {
-   const id = req.params.id
+   const id = req.params.id;
+   const updateData = { ...req.body };
+
+   if (req.file) {
+      const imagePath = 'user_images/' + req.file.filename;  // Đường dẫn tương đối đến ảnh
+      updateData.avatar = imagePath;  // Lưu đường dẫn của tệp ảnh
+   }
 
    try {
-      const updatedUser = await User.findByIdAndUpdate(id, {
-         $set: req.body
-      }, { new: true })
-
-      res.status(200).json({ success: true, message: 'Successfully updated', data: updatedUser })
+      const updatedUser = await User.findByIdAndUpdate(id, { $set: updateData }, { new: true });
+      res.status(200).json({ success: true, message: 'Successfully updated', data: updatedUser });
    } catch (error) {
-      res.status(500).json({ success: false, message: 'Failed to update' })
+      res.status(500).json({ success: false, message: 'Failed to update' });
    }
-}
+};
 
-//Delete User
+// Create new User with file upload
+export const createUser = async (req, res) => {
+   const newUser = new User(req.body);
+   console.log(req.body);
+   // if (req.file) {
+   //    const imagePath = 'user_images/' + req.file.filename; // Đường dẫn tương đối đến ảnh
+   //    newUser.avatar = imagePath; // Lưu đường dẫn của tệp ảnh
+   // }
+
+   try {
+      const savedUser = await newUser.save();
+      res.status(200).json({ success: true, message: 'Successfully created', data: savedUser });
+   } catch (error) {
+      res.status(500).json({ success: false, message: 'Failed to create. Try again!' });
+   }
+};
+
+// Xóa User
 export const deleteUser = async (req, res) => {
-   const id = req.params.id
+   const id = req.params.id;
 
    try {
-      await User.findByIdAndDelete(id)
-
-      res.status(200).json({ success: true, message: 'Successfully deleted' })
+      await User.findByIdAndDelete(id);
+      res.status(200).json({ success: true, message: 'Successfully deleted' });
    } catch (error) {
-      res.status(500).json({ success: false, message: 'Failed to delete' })
+      res.status(500).json({ success: false, message: 'Failed to delete' });
    }
-}
+};
 
-//Get single User
+// Lấy thông tin User đơn lẻ
 export const getSingleUser = async (req, res) => {
-   const id = req.params.id
+   const id = req.params.id;
 
    try {
-      const user = await User.findById(id)
-
-      res.status(200).json({ success: true, message: 'Successfully', data: user })
+      const user = await User.findById(id);
+      res.status(200).json({ success: true, message: 'Successfully', data: user });
    } catch (error) {
-      res.status(404).json({ success: false, message: 'Not Found' })
+      res.status(404).json({ success: false, message: 'Not Found' });
    }
-}
+};
 
-//GetAll User
+// Lấy tất cả Users
 export const getAllUser = async (req, res) => {
-   //console.log(page)
-
    try {
-      const users = await User.find({})
-
-      res.status(200).json({ success: true, message: 'Successfully', data: users })
+      const users = await User.find({});
+      res.status(200).json({ success: true, message: 'Successfully', data: users });
    } catch (error) {
-      res.status(404).json({ success: false, message: 'Not Found' })
+      res.status(404).json({ success: false, message: 'Not Found' });
    }
-}
+};
