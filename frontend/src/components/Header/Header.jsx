@@ -10,15 +10,22 @@ const nav__links = [
    {
       path: '/home',
       display: 'Home',
+   }, 
+   {
+      path: '/tours',
+      display: 'Tours',
    },
    {
       path: '/about',
       display: 'About',
    },
    {
-      path: '/tours',
-      display: 'Tours',
-   },
+      path: '/deals',
+      display: 'Promotion',
+   },{
+      path: '/contact',
+      display: 'Contact',
+   }
 ];
 
 const Header = () => {

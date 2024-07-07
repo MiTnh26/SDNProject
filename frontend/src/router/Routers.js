@@ -12,6 +12,8 @@ import CopyrightPage from '../pages/CopyrightPage'
 import ForgotPassword from '../pages/ForgetPassWord'
 import Profile from '../pages/Profile'
 import MyBookings from '../pages/myBooking'
+import Promotion from '../pages/Promotion'
+import ContactPage from '../pages/Contact'
 
 const Routers = () => {
    return (
@@ -30,6 +32,8 @@ const Routers = () => {
          <Route path='reset-password' element={<ForgotPassword />} />
          <Route path="/profile" element={<Profile />} />
          <Route path="/my-booking" element={<MyBookings />} />
+         <Route path='/contact' element={<ContactPage />} />
+         <Route path='/deals' element={<Promotion />} />
 
 
       </Routes>
