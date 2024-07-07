@@ -4,6 +4,7 @@ import facebookIcon from '../assets/photos/facebook.png';
 import instagramIcon from '../assets/photos/instagram.png';
 import logo from '../assets/photos/logo.png';
 import '../styles/about.css';
+import CommonSection from '../shared/CommonSection';
 
 const AboutPage = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -54,10 +55,7 @@ const AboutPage = () => {
 
     <div className="about-page">
   
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop:'50px', marginBottom: '50px'}}>
-    <Link to="/" className="logo-link">
-        <img src={logo} alt="logo" className="logo" />
-      </Link>
+    <div> <CommonSection title={"About Touristic"} />
       </div>
       <ul className="link-list">
     <a href="#intro">Introduction</a>

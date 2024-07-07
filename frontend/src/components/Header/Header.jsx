@@ -13,10 +13,11 @@ const nav__links = [
    }, 
    {
       path: '/tours',
-      display: 'Tours',
+      display: 'Tours'
    },
    {
       path: '/about',
+
       display: 'About',
    },
    {
@@ -27,6 +28,7 @@ const nav__links = [
       display: 'Contact',
    }
 ];
+
 
 const Header = () => {
    const headerRef = useRef(null);

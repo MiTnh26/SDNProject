@@ -9,7 +9,7 @@ const Layout = () => {
          <Header />
          <Routers />
          <Footer />
-         <ScrollUpButton /> {/* Include the ScrollUpButton component */}
+         <ScrollUpButton /> 
       </>
    );
 };

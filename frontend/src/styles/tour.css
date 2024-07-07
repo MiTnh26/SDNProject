@@ -17,3 +17,27 @@
    background: var(--secondary-color);
    color     : #fff !important;
 }
+.filter-dropdown {
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.filter-dropdown select {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 16px;
+   background-color: #fff;
+   transition: border-color 0.3s;
+}
+
+.filter-dropdown select:focus {
+   border-color: #007bff;
+   outline: none;
+}
+
+.filter-dropdown option {
+   padding: 10px;
+   font-size: 16px;
+}
