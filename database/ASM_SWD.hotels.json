@@ -1,0 +1,119 @@
+[{
+  "_id": {
+    "$oid": "668a6e4b34a25b959abc5bff"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Paradise Hotel",
+  "price": 250,
+  "createdAt": {
+    "$date": "2024-07-07T10:30:35.536Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:30:35.536Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6ea834a25b959abc5c01"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Signature Halong Hotel",
+  "price": 350,
+  "createdAt": {
+    "$date": "2024-07-07T10:32:08.108Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:32:08.108Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6ec634a25b959abc5c03"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Athena Hotel",
+  "price": 270,
+  "createdAt": {
+    "$date": "2024-07-07T10:32:38.758Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:32:38.758Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6ed134a25b959abc5c05"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Indochina Hotel",
+  "price": 220,
+  "createdAt": {
+    "$date": "2024-07-07T10:32:49.716Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:32:49.716Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6ee034a25b959abc5c07"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Bhaya Hotel",
+  "price": 290,
+  "createdAt": {
+    "$date": "2024-07-07T10:33:04.161Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:33:04.161Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6eef34a25b959abc5c09"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Royal Wings Hotel",
+  "price": 300,
+  "createdAt": {
+    "$date": "2024-07-07T10:33:19.113Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:33:19.113Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6efa34a25b959abc5c0b"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Aphrodite Hotel",
+  "price": 320,
+  "createdAt": {
+    "$date": "2024-07-07T10:33:30.089Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:33:30.089Z"
+  },
+  "__v": 0
+}]

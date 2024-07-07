@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "668a71a7dbfe9f63800f3578"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "On Board",
+  "createdAt": {
+    "$date": "2024-07-07T10:44:55.984Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:44:55.984Z"
+  },
+  "__v": 0
+}]

@@ -8,6 +8,10 @@ import userRoute from './routes/users.js'
 import authRoute from './routes/auth.js'
 import reviewRoute from './routes/reviews.js'
 import bookingRoute from './routes/bookings.js'
+import hotelRoute from './routes/hotels.js'
+import itineraryRoute from './routes/itinerary.js'
+import restaurantRoute from './routes/restaurants.js'
+
 
 dotenv.config()
 const app = express()
@@ -40,6 +44,10 @@ app.use("/api/v1/tours", tourRoute)
 app.use("/api/v1/users", userRoute)
 app.use("/api/v1/review", reviewRoute)
 app.use("/api/v1/booking", bookingRoute)
+app.use("/api/v1/hotels", hotelRoute)
+app.use("/api/v1/itinerary", itineraryRoute)
+app.use("/api/v1/restaurants", restaurantRoute)
+
 
 app.listen(port, () => {
    connect()
