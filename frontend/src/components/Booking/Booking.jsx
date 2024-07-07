@@ -11,7 +11,7 @@ const Booking = ({ tour, avgRating }) => {
    const [itinerary, setItinerary] = useState([]);
    const [hotels, setHotels] = useState([]);
    const [restaurants, setRestaurants] = useState([]);
-   const tourId = tour ? tour._id : null;
+   const tourId = tour._id;
    const navigate = useNavigate();
    const { user } = useContext(AuthContext);
 
@@ -27,7 +27,7 @@ const Booking = ({ tour, avgRating }) => {
       price: price,
       hotelId: '',
       hotelPrice: 0, // thêm trường hotelPrice
-      restaurantId: '',
+      restaurantId: ''
    });
 
    useEffect(() => {
@@ -55,6 +55,7 @@ const Booking = ({ tour, avgRating }) => {
 
    const handleChange = e => {
       setBooking(prev => ({ ...prev, [e.target.id]: e.target.value }));
+      console.log(booking)
    }
 
    const handleSelectChange = e => {
@@ -63,7 +64,11 @@ const Booking = ({ tour, avgRating }) => {
       if (name === 'hotelId') {
          const selectedHotel = hotels.find(hotel => hotel._id === value);
          setBooking(prev => ({ ...prev, hotelId: value, hotelPrice: selectedHotel ? selectedHotel.price : 0 }));
+      } else if (name === 'restaurantId') {
+         setBooking(prev => ({ ...prev, restaurantId: value }));
       }
+      console.log(booking)
+
    }
 
    const serviceFee = 10;
