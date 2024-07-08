@@ -1,46 +1,40 @@
-import Booking from './../models/Booking.js'
-
+import Booking from './../models/Booking.js';
 
 // create new booking
 export const createBooking = async (req, res) => {
-   const newBooking = new Booking(req.body)
+   const newBooking = new Booking(req.body);
 
    try {
-      const savedBooking = await newBooking.save()
-
-      res.status(200).json({ success: true, message: "Your tour is booked!", data: savedBooking })
+      const savedBooking = await newBooking.save();
+      res.status(200).json({ success: true, message: "Your tour is booked!", data: savedBooking });
    } catch (error) {
-      res.status(500).json({ success: true, message: "Internal server error!" })
+      res.status(500).json({ success: true, message: "Internal server error!" });
    }
-}
+};
 
 // get single booking
 export const getBooking = async (req, res) => {
-   const id = req.params.id
+   const id = req.params.id;
 
    try {
-      const book = await Booking.findById(id)
-
-      res.status(200).json({ success: true, message: "Successful!", data: book })
+      const book = await Booking.findById(id);
+      res.status(200).json({ success: true, message: "Successful!", data: book });
    } catch (error) {
-      res.status(404).json({ success: true, message: "Not Found!" })
+      res.status(404).json({ success: true, message: "Not Found!" });
    }
-}
-
+};
 
 // get all booking
 export const getAllBooking = async (req, res) => {
-
    try {
-      const books = await Booking.find()
-
-      res.status(200).json({ success: true, message: "Successful!", data: books })
+      const books = await Booking.find();
+      res.status(200).json({ success: true, message: "Successful!", data: books });
    } catch (error) {
-      res.status(500).json({ success: true, message: "Internal server error!" })
+      res.status(500).json({ success: true, message: "Internal server error!" });
    }
-}
+};
 
-
+// delete booking
 export const deleteBooking = async (req, res) => {
    const { bookingId } = req.params;
 
@@ -56,7 +50,8 @@ export const deleteBooking = async (req, res) => {
       console.error('Error deleting booking:', error);
       res.status(500).json({ success: false, message: 'Failed to delete booking' });
    }
-}
+};
+
 // get all bookings by userId
 export const getAllBookingByUserId = async (req, res) => {
    const userId = req.params.userId;
@@ -72,5 +67,49 @@ export const getAllBookingByUserId = async (req, res) => {
    } catch (error) {
       console.error('Error fetching bookings by userId:', error);
       res.status(500).json({ success: false, message: 'Internal server error!' });
+   }
+};
+
+// update booking by ID
+export const updateBookingById = async (req, res) => {
+   const { bookingId } = req.params;
+
+   try {
+      const updatedBooking = await Booking.findByIdAndUpdate(
+         bookingId,
+         { $set: req.body },
+         { new: true }
+      );
+
+      if (!updatedBooking) {
+         return res.status(404).json({ success: false, message: 'Booking not found' });
+      }
+
+      res.status(200).json({ success: true, message: 'Booking updated successfully', data: updatedBooking });
+   } catch (error) {
+      console.error('Error updating booking:', error);
+      res.status(500).json({ success: false, message: 'Failed to update booking' });
+   }
+};
+
+// cancel booking by ID
+export const cancelBookingById = async (req, res) => {
+   const { bookingId } = req.params;
+
+   try {
+      const cancelledBooking = await Booking.findByIdAndUpdate(
+         bookingId,
+         { $set: { status: 'cancelled' } },
+         { new: true }
+      );
+
+      if (!cancelledBooking) {
+         return res.status(404).json({ success: false, message: 'Booking not found' });
+      }
+
+      res.status(200).json({ success: true, message: 'Booking cancelled successfully', data: cancelledBooking });
+   } catch (error) {
+      console.error('Error cancelling booking:', error);
+      res.status(500).json({ success: false, message: 'Failed to cancel booking' });
    }
 };

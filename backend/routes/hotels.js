@@ -3,7 +3,7 @@ import {
     createHotel,
     updateHotel,
     getAllHotels,
-    getAllHotelsByTourId
+    getAllHotelsByTourId, getHotelById
 } from '../Controllers/hotelController.js'
 import { verifyAdmin, verifyUser } from '../utils/verifyToken.js'
 
@@ -20,5 +20,6 @@ router.get("/", verifyUser, getAllHotels);
 
 // Get all hotels by tour ID
 router.get("/tour/:tourId", getAllHotelsByTourId);
+router.get("/:id", getHotelById);
 
 export default router;
