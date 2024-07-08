@@ -11,6 +11,8 @@ const MyBookings = () => {
     const [tours, setTours] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedBooking, setSelectedBooking] = useState(null);
+    const [hotel, setHotel] = useState(null);
+    const [restaurant, setRestaurant] = useState(null);
     const userId = user ? user._id : null;
 
     useEffect(() => {
@@ -62,7 +64,24 @@ const MyBookings = () => {
         }
     };
 
-    const handleShowDetails = (booking) => {
+    const handleShowDetails = async (booking) => {
+        const hotelId = booking.hotelId; // Assuming booking contains hotel and restaurant IDs
+        const restaurantId = booking.restaurantId;
+
+        try {
+            const responseHotel = await axios.get(`${BASE_URL}/hotels/${hotelId}`, {
+                withCredentials: true,
+            });
+            setHotel(responseHotel.data);
+
+            const responseRestaurant = await axios.get(`${BASE_URL}/restaurants/${restaurantId}`, {
+                withCredentials: true,
+            });
+            setRestaurant(responseRestaurant.data);
+        } catch (error) {
+            console.error("Error fetching hotel or restaurant data:", error);
+        }
+
         setSelectedBooking(booking);
         setShowModal(true);
     };
@@ -91,15 +110,11 @@ const MyBookings = () => {
                                     ) : (
                                         <p>Tour information not available</p>
                                     )}
-                                    {/* <Card.Text>
+                                    <Card.Text>
                                         <strong>Date:</strong> {booking.bookAt}
                                         <br />
                                         <strong>Status:</strong> {booking.status}
-                                        <br />
-                                        <strong>Price:</strong> ${booking.price}
-                                        <br />
-                                        <strong>Max Group Size:</strong> {booking.guestSize}
-                                    </Card.Text> */}
+                                    </Card.Text>
 
                                     <Button variant="primary" onClick={() => handleShowDetails(booking)}>
                                         Details
@@ -129,9 +144,16 @@ const MyBookings = () => {
                         <>
                             <p><strong>Tour Name:</strong> {selectedBooking.tourName}</p>
                             <p><strong>Date:</strong> {selectedBooking.bookAt}</p>
+                            <p><strong>Full Name:</strong> {selectedBooking.fullName}</p>
+                            <p><strong>Email:</strong> {selectedBooking.userEmail}</p>
+                            <p><strong>Group Size:</strong> {selectedBooking.guestSize}</p>
+                            <p><strong>Phone:</strong> {selectedBooking.phone}</p>
+                            <p><strong>Hotel:</strong> {hotel ? hotel.name : "Not available"}</p>
+                            <p><strong>Restaurant:</strong> {restaurant ? restaurant.name : "Not available"}</p>
+                            <p><strong>Hotel Price:</strong> ${selectedBooking.hotelPrice}</p>
                             <p><strong>Status:</strong> {selectedBooking.status}</p>
-                            <p><strong>Price:</strong> ${selectedBooking.price}</p>
-                            <p><strong>Max Group Size:</strong> {selectedBooking.guestSize}</p>
+                            <p><strong>Total:</strong> ${selectedBooking.price}</p>
+
                             {selectedBooking.tourInfo && (
                                 <>
                                     <h5>Tour Information</h5>

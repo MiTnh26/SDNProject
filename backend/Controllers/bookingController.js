@@ -8,7 +8,7 @@ export const createBooking = async (req, res) => {
       const savedBooking = await newBooking.save();
       res.status(200).json({ success: true, message: "Your tour is booked!", data: savedBooking });
    } catch (error) {
-      res.status(500).json({ success: true, message: "Internal server error!" });
+      res.status(500).json({ success: false, message: "Internal server error!" });
    }
 };
 
@@ -20,17 +20,17 @@ export const getBooking = async (req, res) => {
       const book = await Booking.findById(id);
       res.status(200).json({ success: true, message: "Successful!", data: book });
    } catch (error) {
-      res.status(404).json({ success: true, message: "Not Found!" });
+      res.status(404).json({ success: false, message: "Not Found!" });
    }
 };
 
-// get all booking
+// get all bookings
 export const getAllBooking = async (req, res) => {
    try {
-      const books = await Booking.find();
+      const books = await Booking.find().sort({ bookAt: -1 }); // Sắp xếp theo ngày giảm dần
       res.status(200).json({ success: true, message: "Successful!", data: books });
    } catch (error) {
-      res.status(500).json({ success: true, message: "Internal server error!" });
+      res.status(500).json({ success: false, message: "Internal server error!" });
    }
 };
 
@@ -57,7 +57,7 @@ export const getAllBookingByUserId = async (req, res) => {
    const userId = req.params.userId;
 
    try {
-      const bookings = await Booking.find({ userId });
+      const bookings = await Booking.find({ userId }).sort({ bookAt: -1 }); // Sắp xếp theo ngày giảm dần
 
       if (!bookings.length) {
          return res.status(404).json({ success: false, message: 'No bookings found for this user' });
