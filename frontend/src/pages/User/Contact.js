@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/contact.css';
-import CommonSection from '../shared/CommonSection';
+import '../../styles/contact.css';
+import CommonSection from '../../shared/CommonSection';
 
 const ContactPage = () => {
   return (

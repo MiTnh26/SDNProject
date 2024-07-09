@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import CommonSection from '../shared/CommonSection';
-import '../styles/tour.css';
-import TourCard from './../shared/TourCard';
-import SearchBar from './../shared/SearchBar';
+import CommonSection from '../../shared/CommonSection';
+import '../../styles/tour.css';
+import TourCard from '../../shared/TourCard';
+import SearchBar from '../../shared/SearchBar';
 import { Col, Container, Row } from 'reactstrap';
-import useFetch from '../hooks/useFetch';
-import { BASE_URL } from '../utils/config';
+import useFetch from '../../hooks/useFetch';
+import { BASE_URL } from '../../utils/config';
 
 const Tours = () => {
    const [pageCount, setPageCount] = useState(0);

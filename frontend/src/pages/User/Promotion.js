@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/promotion.css';
+import '../../styles/promotion.css';
 import Swal from 'sweetalert2';
-import CommonSection from '../shared/CommonSection';
+import CommonSection from '../../shared/CommonSection';
 const promotions = [
   {
     id: 1,

@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
-import { BASE_URL } from '../utils/config';
+import { BASE_URL } from '../../utils/config';
 import { Container, Row, Col, Form, Button, Image, Alert } from 'react-bootstrap';
-import '../styles/profile.css';
+import '../../styles/profile.css';
 
 const Profile = () => {
     const { user } = useContext(AuthContext);

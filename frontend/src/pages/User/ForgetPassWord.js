@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { BASE_URL } from '../utils/config';
-import loginImg from '../assets/images/login.png'
-import userIcon from '../assets/images/user.png'
+import { BASE_URL } from '../../utils/config';
+import loginImg from '../../assets/images/login.png'
+import userIcon from '../../assets/images/user.png'
 
 const ResetPassword = () => {
    const [formData, setFormData] = useState({

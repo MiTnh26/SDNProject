@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
-import { AuthContext } from "../context/AuthContext";
-import { BASE_URL } from "../utils/config";
-import TourCard from "../shared/TourCard";
+import { AuthContext } from "../../context/AuthContext";
+import { BASE_URL } from "../../utils/config";
+import TourCard from "../../shared/TourCard";
 import Swal from "sweetalert2";
-import "../styles/mybooking.css"
+import "../../styles/mybooking.css"
 import { format } from "date-fns";
 const MyBookings = () => {
     const { user } = useContext(AuthContext);

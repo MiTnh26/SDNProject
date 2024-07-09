@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import facebookIcon from '../assets/photos/facebook.png';
-import instagramIcon from '../assets/photos/instagram.png';
-import logo from '../assets/photos/logo.png';
-import '../styles/about.css';
-import CommonSection from '../shared/CommonSection';
+import facebookIcon from '../../assets/photos/facebook.png';
+import instagramIcon from '../../assets/photos/instagram.png';
+import logo from '../../assets/photos/logo.png';
+import '../../styles/about.css';
+import CommonSection from '../../shared/CommonSection';
 
 const AboutPage = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
