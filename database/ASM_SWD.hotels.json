@@ -1,0 +1,561 @@
+[{
+  "_id": {
+    "$oid": "668a6e4b34a25b959abc5bff"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Paradise Hotel",
+  "price": 250,
+  "createdAt": {
+    "$date": "2024-07-07T10:30:35.536Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:30:35.536Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6ea834a25b959abc5c01"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Signature Halong Hotel",
+  "price": 350,
+  "createdAt": {
+    "$date": "2024-07-07T10:32:08.108Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:32:08.108Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6ec634a25b959abc5c03"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Athena Hotel",
+  "price": 270,
+  "createdAt": {
+    "$date": "2024-07-07T10:32:38.758Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:32:38.758Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6ed134a25b959abc5c05"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Indochina Hotel",
+  "price": 220,
+  "createdAt": {
+    "$date": "2024-07-07T10:32:49.716Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:32:49.716Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6ee034a25b959abc5c07"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Bhaya Hotel",
+  "price": 290,
+  "createdAt": {
+    "$date": "2024-07-07T10:33:04.161Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:33:04.161Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6eef34a25b959abc5c09"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Royal Wings Hotel",
+  "price": 300,
+  "createdAt": {
+    "$date": "2024-07-07T10:33:19.113Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:33:19.113Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6efa34a25b959abc5c0b"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "name": "Aphrodite Hotel",
+  "price": 320,
+  "createdAt": {
+    "$date": "2024-07-07T10:33:30.089Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:33:30.089Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb70cbd72d52bd99323f8"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317b"
+  },
+  "name": "Anantara Hoi An Resort",
+  "price": 120,
+  "createdAt": {
+    "$date": "2024-07-09T04:05:32.905Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:05:32.905Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb761bd72d52bd99323fa"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317b"
+  },
+  "name": "Hoi An Silk Marina Resort & Spa",
+  "price": 150,
+  "createdAt": {
+    "$date": "2024-07-09T04:06:57.079Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:06:57.079Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb76ebd72d52bd99323fc"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317b"
+  },
+  "name": "Little Riverside Hoi An",
+  "price": 200,
+  "createdAt": {
+    "$date": "2024-07-09T04:07:10.751Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:07:10.751Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb773bd72d52bd99323fe"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317b"
+  },
+  "name": "Almanity Hoi An Resort & Spa",
+  "price": 180,
+  "createdAt": {
+    "$date": "2024-07-09T04:07:15.278Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:07:15.278Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb795bd72d52bd9932400"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317b"
+  },
+  "name": "Hotel Royal Hoi An - MGallery",
+  "price": 250,
+  "createdAt": {
+    "$date": "2024-07-09T04:07:49.290Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:07:49.290Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb962bd72d52bd9932443"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317c"
+  },
+  "name": "Sofitel Legend Metropole Hanoi",
+  "price": 300,
+  "createdAt": {
+    "$date": "2024-07-09T04:15:30.283Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:15:30.283Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb96bbd72d52bd9932445"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317c"
+  },
+  "name": "Mövenpick Hotel Hanoi",
+  "price": 200,
+  "createdAt": {
+    "$date": "2024-07-09T04:15:39.337Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:15:39.337Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb975bd72d52bd9932447"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317c"
+  },
+  "name": "InterContinental Hanoi Westlake",
+  "price": 250,
+  "createdAt": {
+    "$date": "2024-07-09T04:15:49.189Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:15:49.189Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb980bd72d52bd9932449"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317c"
+  },
+  "name": "Hilton Hanoi Opera",
+  "price": 220,
+  "createdAt": {
+    "$date": "2024-07-09T04:16:00.050Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:16:00.050Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb986bd72d52bd993244b"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317c"
+  },
+  "name": "Pan Pacific Hanoi",
+  "price": 240,
+  "createdAt": {
+    "$date": "2024-07-09T04:16:06.335Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:16:06.335Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbbe6bd72d52bd993247f"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317d"
+  },
+  "name": "Victoria Sapa Resort & Spa",
+  "price": 150,
+  "createdAt": {
+    "$date": "2024-07-09T04:26:14.022Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:26:14.022Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbc00bd72d52bd9932481"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317d"
+  },
+  "name": "Sapa Horizon Hotel",
+  "price": 100,
+  "createdAt": {
+    "$date": "2024-07-09T04:26:40.695Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:26:40.695Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbc07bd72d52bd9932483"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317d"
+  },
+  "name": "Aira Boutique Sapa Hotel & Spa",
+  "price": 120,
+  "createdAt": {
+    "$date": "2024-07-09T04:26:47.059Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:26:47.059Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbc0fbd72d52bd9932485"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317d"
+  },
+  "name": "Pao's Sapa Leisure Hotel",
+  "price": 110,
+  "createdAt": {
+    "$date": "2024-07-09T04:26:55.461Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:26:55.461Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbc17bd72d52bd9932487"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317d"
+  },
+  "name": "Sapa Clay House - Mountain Retreat",
+  "price": 130,
+  "createdAt": {
+    "$date": "2024-07-09T04:27:03.300Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:27:03.300Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbcdebd72d52bd99324a5"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317e"
+  },
+  "name": "Anantara Mui Ne Resort",
+  "price": 200,
+  "createdAt": {
+    "$date": "2024-07-09T04:30:22.495Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:30:22.495Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbd39bd72d52bd99324a7"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317e"
+  },
+  "name": "Bamboo Village Beach Resort & Spa",
+  "price": 150,
+  "createdAt": {
+    "$date": "2024-07-09T04:31:53.989Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:31:53.989Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbd74bd72d52bd99324b3"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317e"
+  },
+  "name": "The Cliff Resort & Residences",
+  "price": 170,
+  "createdAt": {
+    "$date": "2024-07-09T04:32:52.907Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:32:52.907Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbd7dbd72d52bd99324b5"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317e"
+  },
+  "name": "Pandanus Resort",
+  "price": 130,
+  "createdAt": {
+    "$date": "2024-07-09T04:33:01.924Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:33:01.924Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbd87bd72d52bd99324b7"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317e"
+  },
+  "name": "Mui Ne Bay Resort",
+  "price": 120,
+  "createdAt": {
+    "$date": "2024-07-09T04:33:11.362Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:33:11.362Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbea4bd72d52bd9932515"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317f"
+  },
+  "name": "Sun Spa Resort",
+  "price": 180,
+  "createdAt": {
+    "$date": "2024-07-09T04:37:56.137Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:37:56.137Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbeacbd72d52bd9932517"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317f"
+  },
+  "name": "Phong Nha Lake House Resort",
+  "price": 150,
+  "createdAt": {
+    "$date": "2024-07-09T04:38:04.585Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:38:04.585Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66956e4b34a25b959abceeff"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa173180"
+  },
+  "name": "Vinpearl Resort & Spa",
+  "price": 200,
+  "createdAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66956e4b34a25b959abceefe"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa173180"
+  },
+  "name": "Sheraton Nha Trang Hotel & Spa",
+  "price": 180,
+  "createdAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66986e4b34a25b959abceeff"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa173181"
+  },
+  "name": "Liberty Central Saigon Citypoint Hotel",
+  "price": 150,
+  "createdAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66986e4b34a25b959abceefe"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa173181"
+  },
+  "name": "Rex Hotel Saigon",
+  "price": 180,
+  "createdAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "__v": 0
+}]

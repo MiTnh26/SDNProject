@@ -35,18 +35,34 @@ const tourSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-
     reviews: [
       {
         type: mongoose.Types.ObjectId,
         ref: "Review",
       },
     ],
-
     featured: {
       type: Boolean,
       default: false,
     },
+    itineraries: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Itinerary",
+      }
+    ],
+    hotels: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Hotel",
+      }
+    ],
+    restaurants: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Restaurant",
+      }
+    ]
   },
   { timestamps: true }
 );

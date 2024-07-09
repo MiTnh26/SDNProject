@@ -28,6 +28,27 @@ const bookingSchema = new mongoose.Schema(
          type: Date,
          required: true
       },
+      status: {
+         type: String,
+         default: 'pending', // giá trị mặc định là 'pending'
+         enum: ['pending', 'confirmed', 'cancelled'] // các giá trị hợp lệ cho status
+      },
+      price: {
+         type: Number,
+         required: true
+      },
+      hotelId: {
+         type: String, // thêm trường hotelId
+         required: true
+      },
+      hotelPrice: {
+         type: Number, // thêm trường hotelPrice
+         required: true
+      },
+      restaurantId: {
+         type: String, // thêm trường restaurantId
+         required: true
+      }
    },
    { timestamps: true }
 );

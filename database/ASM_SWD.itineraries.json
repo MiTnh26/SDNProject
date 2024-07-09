@@ -1,0 +1,272 @@
+[{
+  "_id": {
+    "$oid": "668a4bfd34a25b959abc5bfb"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "day": 1,
+  "detail": "06:00: Pick up from Hanoi, 08:30: Depart from Hanoi to Ha Long Bay (approximately 3 hours' drive), 11:30: Arrive at Ha Long Bay, check in to the cruise, 12:00: Lunch on board with fresh seafood, 13:30: Visit Thien Cung Cave, one of the most beautiful caves in Ha Long Bay, 15:00: Visit Rooster and Hen Islet, the symbol of Ha Long Bay, 16:00: Visit Vung Vieng fishing village, experience the life of the locals, 18:00: Return to the cruise, enjoy dinner on board, 20:00: Rest, participate in evening entertainment activities on board such as squid fishing, watching movies, 22:00: Overnight at the hotel on board",
+  "createdAt": {
+    "$date": "2024-07-07T08:04:13.745Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T08:04:13.745Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668a6d8d34a25b959abc5bfd"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317a"
+  },
+  "day": 2,
+  "detail": "06:30: Wake up, watch the sunrise over Ha Long Bay, 07:00: Breakfast on board, 08:00: Visit Ba Hang area, kayak to explore the caves and surrounding scenery, 09:30: Return to the cruise, check out, 10:30: Lunch on board as the cruise returns to the pier, 12:00: Return to the pier, end of Ha Long Bay tour, 12:30: Depart back to Hanoi, 15:30: Arrive in Hanoi, end of trip",
+  "createdAt": {
+    "$date": "2024-07-07T10:27:25.275Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-07T10:27:25.275Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb6289d274a1bd6a24f0d"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317b"
+  },
+  "day": 1,
+  "detail": "06:00: Arrival in Hoi An, 08:30: Check-in at hotel, 10:00: Visit the Japanese Covered Bridge, 12:00: Lunch at a local restaurant, 02:00: Walking tour of the ancient town, 05:00: Boat ride on the Thu Bon River",
+  "createdAt": {
+    "$date": "2024-07-09T04:01:44.204Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:01:44.204Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb63a9d274a1bd6a24f0f"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317b"
+  },
+  "day": 2,
+  "detail": "08:00: Visit to local markets, 10:00: Tour of traditional craft villages, 12:00: Lunch at a riverside restaurant, 02:00: Free time for shopping and exploring, 06:00: Dinner and evening lantern festival",
+  "createdAt": {
+    "$date": "2024-07-09T04:02:02.370Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:02:02.370Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb936bd72d52bd993243f"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317c"
+  },
+  "day": 1,
+  "detail": "08:00: Pick up from your hotel, 09:00: Visit Ho Chi Minh Mausoleum, 12:00: Lunch at local restaurant, 14:00: Visit One Pillar Pagoda, 16:00: Return to hotel",
+  "createdAt": {
+    "$date": "2024-07-09T04:14:46.582Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:14:46.582Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cb94cbd72d52bd9932441"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317c"
+  },
+  "day": 2,
+  "detail": "08:00: Pick up from your hotel, 09:00: Visit Ho Chi Minh Museum, 12:00: Lunch at local restaurant, 14:00: Visit Presidential Palace, 16:00: Return to hotel",
+  "createdAt": {
+    "$date": "2024-07-09T04:15:08.425Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:15:08.425Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbbc4bd72d52bd993247b"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317d"
+  },
+  "day": 1,
+  "detail": "08:00: Pick up from your hotel, 12:00: Arrive in Sapa, check-in at hotel, 14:00: Visit Cat Cat Village, 17:00: Return to hotel",
+  "createdAt": {
+    "$date": "2024-07-09T04:25:40.873Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:25:40.873Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbbd3bd72d52bd993247d"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317d"
+  },
+  "day": 2,
+  "detail": "07:00: Breakfast at hotel, 08:00: Trekking to Lao Chai - Ta Van village, 12:00: Lunch at local restaurant, 13:00: Continue trekking, 16:00: Return to hotel",
+  "createdAt": {
+    "$date": "2024-07-09T04:25:55.863Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:25:55.863Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbcc4bd72d52bd99324a1"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317e"
+  },
+  "day": 1,
+  "detail": "07:00: Pick up from your hotel, 10:00: Arrive in Mui Ne, check-in at hotel, 14:00: Visit White Sand Dunes, 17:00: Return to hotel",
+  "createdAt": {
+    "$date": "2024-07-09T04:29:56.513Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:29:56.513Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbcd2bd72d52bd99324a3"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317e"
+  },
+  "day": 2,
+  "detail": "06:00: Sunrise at Red Sand Dunes, 08:00: Breakfast at hotel, 10:00: Visit Fairy Stream, 12:00: Lunch at local restaurant, 15:00: Visit Mui Ne Fishing Village, 18:00: Return to hotel",
+  "createdAt": {
+    "$date": "2024-07-09T04:30:10.857Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:30:10.857Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbe84bd72d52bd9932511"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317f"
+  },
+  "day": 1,
+  "detail": "07:00: Depart from Hue, 11:00: Visit Phong Nha Cave, 13:00: Lunch at local restaurant, 15:00: Explore Paradise Cave, 18:00: Check-in at hotel in Phong Nha",
+  "createdAt": {
+    "$date": "2024-07-09T04:37:24.291Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:37:24.291Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668cbe90bd72d52bd9932513"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa17317f"
+  },
+  "day": 2,
+  "detail": "08:00: Breakfast at hotel, 09:00: Visit Dark Cave and enjoy zipline and mud bathing, 12:00: Lunch at local restaurant, 14:00: Relax at Chay River - Dark Cave, 17:00: Return to Hue",
+  "createdAt": {
+    "$date": "2024-07-09T04:37:36.492Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T04:37:36.492Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66946e4b34a25b959abcefff"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa173180"
+  },
+  "day": 1,
+  "detail": "08:00: Depart from Ho Chi Minh City, 11:00: Visit Po Nagar Cham Towers, 13:00: Lunch at local seafood restaurant, 15:00: Relax at Nha Trang Beach, 18:00: Check-in at hotel in Nha Trang",
+  "createdAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66946e4b34a25b959abcdeee"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa173180"
+  },
+  "day": 2,
+  "detail": "07:00: Breakfast at hotel, 08:00: Visit Vinpearl Land amusement park, 12:00: Lunch at Vinpearl Land restaurant, 15:00: Relax at Nha Trang Beach, 18:00: Return to Ho Chi Minh City",
+  "createdAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66976e4b34a25b959abceeff"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa173181"
+  },
+  "day": 1,
+  "detail": "08:00: Depart from Ho Chi Minh City, 09:00: Visit Cu Chi Tunnels historical site, 12:00: Lunch at local restaurant, 14:00: Return to Ho Chi Minh City",
+  "createdAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66976e4b34a25b959abceeee"
+  },
+  "tourId": {
+    "$oid": "65efbbc9c432bdabaa173181"
+  },
+  "day": 2,
+  "detail": "08:00: Breakfast at hotel, 09:00: Visit War Remnants Museum, 12:00: Lunch at local restaurant, 14:00: Explore Ben Thanh Market, 18:00: Return to hotel",
+  "createdAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-09T09:00:00.000Z"
+  },
+  "__v": 0
+}]
