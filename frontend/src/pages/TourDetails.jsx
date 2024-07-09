@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import '../styles/tour-details.css';
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
-import { useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import calculateAvgRating from '../utils/avgRating';
 import avatar from '../assets/images/avatar.jpg';
 import Booking from '../components/Booking/Booking';
@@ -9,6 +9,7 @@ import useFetch from '../hooks/useFetch';
 import { BASE_URL } from '../utils/config';
 import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const TourDetails = () => {
    const { id } = useParams();
@@ -25,14 +26,21 @@ const TourDetails = () => {
    const { totalRating, avgRating } = calculateAvgRating(reviews);
 
    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-
+   const navigate = useNavigate();
    const submitHandler = async e => {
       e.preventDefault();
       const reviewText = reviewMsgRef.current.value;
 
       try {
          if (!user || !user._id) {
-            alert('Please sign in');
+            Swal.fire({
+               icon: 'error',
+               title: 'Bạn phải đăng nhập để đánh giá',
+               showConfirmButton: true,
+               confirmButtonText : 'Đăng nhập',
+               confirmButtonColor: '#3085d6',
+               timer: 1500
+            })
             return;
          }
 
@@ -55,7 +63,16 @@ const TourDetails = () => {
          if (!res.ok) {
             return alert(result.message);
          }
-         alert(result.message);
+
+         Swal.fire({
+            icon: 'success',
+            title: 'Đánh giá thành công',
+            showConfirmButton: true,
+            confirmButtonText : 'OK',
+            confirmButtonColor: '#3085d6',
+            timer: 1500
+         })
+         navigate(`/tours`);
       } catch (error) {
          alert(error.message);
       }

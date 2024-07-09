@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
 import { BASE_URL } from '../utils/config';
 import { Container, Row, Col, Form, Button, Image, Alert } from 'react-bootstrap';
+import '../styles/profile.css';
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
@@ -180,7 +181,7 @@ const Profile = () => {
                     </Button>
                 </Form>
             ) : (
-                <Row>
+                <Row className="profile-details">
                     <Col md={6}>
                         <p><strong>Username:</strong> {profile.username}</p>
                         <p><strong>Email:</strong> {profile.email}</p>
@@ -193,8 +194,6 @@ const Profile = () => {
                             <Image
                                 src={profile.avatar}
                                 alt="Profile Avatar"
-                                height={100}
-                                width={100}
                             />
                         )}
                     </Col>
@@ -210,7 +209,7 @@ const Profile = () => {
             )}
 
             {isChangingPassword && (
-                <Form className="mt-4">
+                <Form className="password-form">
                     <h4>Change Password</h4>
                     {passwordError && <Alert variant="danger">{passwordError}</Alert>}
                     {passwordSuccess && <Alert variant="success">{passwordSuccess}</Alert>}

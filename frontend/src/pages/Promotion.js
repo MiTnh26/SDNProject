@@ -50,7 +50,6 @@ const Promotion = () => {
     <>
       <CommonSection title={"Deals for today"} />
     <div className="promotion-container">
-      <h1>Current Promotions</h1>
       <div className="promotion-list">
         {promotions.map((promo) => (
           <div key={promo.id} className="promotion-item">

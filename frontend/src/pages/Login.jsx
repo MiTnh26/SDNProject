@@ -6,6 +6,7 @@ import loginImg from '../assets/images/login.png'
 import userIcon from '../assets/images/user.png'
 import { AuthContext } from '../context/AuthContext'
 import { BASE_URL } from '../utils/config'
+import Swal from 'sweetalert2'
 
 const Login = () => {
    const [credentials, setCredentials] = useState({
@@ -22,7 +23,14 @@ const Login = () => {
 
    const handleClick = async e => {
       e.preventDefault()
-
+   Swal.fire({
+   icon: 'success',
+   title: 'Đăng nhập thành công',
+   showConfirmButton: true,
+   confirmButtonText : 'OK',
+   confirmButtonColor: '#3085d6',
+   timer: 1500
+   })
       dispatch({type:'LOGIN_START'})
 
       try {

@@ -4,7 +4,9 @@ import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import { AuthContext } from "../context/AuthContext";
 import { BASE_URL } from "../utils/config";
 import TourCard from "../shared/TourCard";
-
+import Swal from "sweetalert2";
+import "../styles/mybooking.css"
+import { format } from "date-fns";
 const MyBookings = () => {
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
@@ -56,6 +58,14 @@ const MyBookings = () => {
                     booking._id === bookingId ? { ...booking, status: 'cancelled' } : booking
                 );
                 setBookings(updatedBookings);
+                Swal.fire({
+                    icon: "success",
+                    title: "Hủy đặt tour thành công",
+                    showConfirmButton: true,
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "#3085d6",
+                    timer: 1500,
+                })
             } else {
                 console.error("Failed to cancel booking");
             }
@@ -99,7 +109,7 @@ const MyBookings = () => {
             ) : (
                 <Row>
                     {bookingsWithTourInfo.map((booking) => (
-                        <Col lg="3" md="6" sm="6" className="mb-4" key={booking._id}>
+                        <Col lg="4" md="6" sm="6" className="mb-4" key={booking._id}>
                             <Card>
                                 <Card.Body>
                                     <Card.Title>
@@ -111,7 +121,7 @@ const MyBookings = () => {
                                         <p>Tour information not available</p>
                                     )}
                                     <Card.Text>
-                                        <strong>Date:</strong> {booking.bookAt}
+                                        <strong>Date:</strong> {format(new Date(booking.bookAt), "yyyy-MM-dd")}
                                         <br />
                                         <strong>Status:</strong> {booking.status}
                                     </Card.Text>

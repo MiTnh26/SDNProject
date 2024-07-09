@@ -6,6 +6,7 @@ import registerImg from '../assets/images/login.png';
 import userIcon from '../assets/images/user.png';
 import { AuthContext } from '../context/AuthContext';
 import { BASE_URL } from '../utils/config';
+import Swal from 'sweetalert2';
 
 const Register = () => {
    const [credentials, setCredentials] = useState({
@@ -31,6 +32,14 @@ const Register = () => {
    };
 
    const handleClick = async (e) => {
+      Swal.fire({
+         icon: 'success',
+         title: 'Đăng ký thành công',
+         showConfirmButton: true,
+         confirmButtonText : 'OK',
+         confirmButtonColor: '#3085d6',
+         timer: 1500
+         })
       e.preventDefault();
 
       const formData = new FormData();

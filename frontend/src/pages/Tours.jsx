@@ -44,7 +44,10 @@ const Tours = () => {
                <Row>
                   <SearchBar />
                   <Col lg="3" md="6" sm="6">
-                     <select onChange={(e) => setSortCriteria(e.target.value)} className="form-control">
+                     <select
+                        onChange={(e) => setSortCriteria(e.target.value)}
+                        className="form-control sort-select"
+                     >
                         <option value="">Sort By</option>
                         <option value="priceAsc">Price: Low to High</option>
                         <option value="priceDesc">Price: High to Low</option>

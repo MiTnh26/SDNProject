@@ -17,27 +17,18 @@
    background: var(--secondary-color);
    color     : #fff !important;
 }
-.filter-dropdown {
+
+.form-control.sort-select {
    margin-top: 20px;
    margin-bottom: 20px;
-}
-
-.filter-dropdown select {
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+   transition: border-color 0.3s, box-shadow 0.3s;
    width: 100%;
-   padding: 10px;
-   border: 1px solid #ddd;
-   border-radius: 4px;
-   font-size: 16px;
-   background-color: #fff;
-   transition: border-color 0.3s;
-}
-
-.filter-dropdown select:focus {
+ }
+ 
+ .form-control.sort-select:focus {
    border-color: #007bff;
-   outline: none;
-}
-
-.filter-dropdown option {
-   padding: 10px;
-   font-size: 16px;
-}
+   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+ }

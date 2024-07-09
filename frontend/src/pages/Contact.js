@@ -8,7 +8,6 @@ const ContactPage = () => {
       <CommonSection title={"Contact"} />
       <div className="contact-container">
         <div className="container">
-          <h1 className="text-center">Liên Hệ</h1>
           <div className="row">
             <div className="col-md-6">
               <h2>Thông tin liên hệ</h2>
