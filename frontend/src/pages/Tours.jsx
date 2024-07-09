@@ -32,6 +32,10 @@ const Tours = () => {
          } else if (sortCriteria === 'priceDesc') {
             sortedArray.sort((a, b) => b.price - a.price);
          } 
+         else if (sortCriteria === 'rating') {
+            sortedArray.sort((a, b) => b.rating - a.rating);
+         }
+         
          setSortedTours(sortedArray);
       }
    }, [tours, sortCriteria]);
@@ -48,10 +52,11 @@ const Tours = () => {
                         onChange={(e) => setSortCriteria(e.target.value)}
                         className="form-control sort-select"
                      >
-                        <option value="">Sort By</option>
+                        <option value="">All</option>
                         <option value="priceAsc">Price: Low to High</option>
                         <option value="priceDesc">Price: High to Low</option>
                         <option value="location">Location</option>
+                        <option value="rating">Most ratings</option>
                      </select>
                   </Col>
                </Row>
