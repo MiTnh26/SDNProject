@@ -5,8 +5,9 @@ import { AuthContext } from "../../context/AuthContext";
 import { BASE_URL } from "../../utils/config";
 import TourCard from "../../shared/TourCard";
 import Swal from "sweetalert2";
-import "../../styles/mybooking.css"
+import "../../styles/mybooking.css";
 import { format } from "date-fns";
+
 const MyBookings = () => {
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
@@ -65,7 +66,7 @@ const MyBookings = () => {
                     confirmButtonText: "OK",
                     confirmButtonColor: "#3085d6",
                     timer: 1500,
-                })
+                });
             } else {
                 console.error("Failed to cancel booking");
             }
@@ -121,22 +122,39 @@ const MyBookings = () => {
                                         <p>Tour information not available</p>
                                     )}
                                     <Card.Text>
-                                        <strong>Date:</strong> {format(new Date(booking.bookAt), "yyyy-MM-dd")}
+                                        <strong>Date:</strong> {format(new Date(booking.bookAt), "dd-MM-yyyy")}
                                         <br />
-                                        <strong>Status:</strong> {booking.status}
+                                        <strong>Status:</strong> <span className={
+                                            booking.status === 'pending' ? 'status-pending' :
+                                                booking.status === 'confirmed' ? 'status-confirmed' :
+                                                    booking.status === 'cancelled' ? 'status-cancelled' : ''
+                                        }>{booking.status}</span>
                                     </Card.Text>
 
                                     <Button variant="primary" onClick={() => handleShowDetails(booking)}>
                                         Details
                                     </Button>
                                     {booking.status === "pending" && (
-                                        <Button
+
+                                        <Button className="mx-2"
                                             variant="danger"
                                             onClick={() => handleCancelBooking(booking._id)}
-                                            disabled={booking.status !== "pending"}
                                         >
                                             Cancel Booking
                                         </Button>
+
+
+                                    )}
+                                    {booking.status === "pending" && (
+
+                                        <Button
+                                            variant="success"
+                                        //    onClick={() => handleCancelBooking(booking._id)}
+                                        >
+                                            Pay Now
+                                        </Button>
+
+
                                     )}
                                 </Card.Body>
                             </Card>
@@ -153,7 +171,7 @@ const MyBookings = () => {
                     {selectedBooking && (
                         <>
                             <p><strong>Tour Name:</strong> {selectedBooking.tourName}</p>
-                            <p><strong>Date:</strong> {selectedBooking.bookAt}</p>
+                            <p><strong>Book Date:</strong> {format(new Date(selectedBooking.bookAt), "dd-MM-yyyy")}</p>
                             <p><strong>Full Name:</strong> {selectedBooking.fullName}</p>
                             <p><strong>Email:</strong> {selectedBooking.userEmail}</p>
                             <p><strong>Group Size:</strong> {selectedBooking.guestSize}</p>
@@ -161,7 +179,11 @@ const MyBookings = () => {
                             <p><strong>Hotel:</strong> {hotel ? hotel.name : "Not available"}</p>
                             <p><strong>Restaurant:</strong> {restaurant ? restaurant.name : "Not available"}</p>
                             <p><strong>Hotel Price:</strong> ${selectedBooking.hotelPrice}</p>
-                            <p><strong>Status:</strong> {selectedBooking.status}</p>
+                            <p><strong>Status:</strong> <span className={
+                                selectedBooking.status === 'pending' ? 'status-pending' :
+                                    selectedBooking.status === 'confirmed' ? 'status-confirmed' :
+                                        selectedBooking.status === 'cancelled' ? 'status-cancelled' : ''
+                            }>{selectedBooking.status}</span></p>
                             <p><strong>Total:</strong> ${selectedBooking.price}</p>
 
                             {selectedBooking.tourInfo && (
