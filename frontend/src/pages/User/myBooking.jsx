@@ -61,7 +61,7 @@ const MyBookings = () => {
                 setBookings(updatedBookings);
                 Swal.fire({
                     icon: "success",
-                    title: "Hủy đặt tour thành công",
+                    title: "Booking cancelled successfully",
                     showConfirmButton: true,
                     confirmButtonText: "OK",
                     confirmButtonColor: "#3085d6",
@@ -71,7 +71,7 @@ const MyBookings = () => {
                 console.error("Failed to cancel booking");
             }
         } catch (error) {
-            console.error("Error canceling booking:", error);
+            console.error("Error cancelling booking:", error);
         }
     };
 
@@ -100,6 +100,28 @@ const MyBookings = () => {
     const handleCloseModal = () => {
         setShowModal(false);
         setSelectedBooking(null);
+    };
+
+    const handlePayment = async (booking) => {
+        try {
+            const response = await axios.post(
+                `${BASE_URL}/payment/create-payment-link`,
+                {
+                    amount: booking.price,
+                    bookingId: booking._id, // Pass booking ID to link it with payment
+                },
+                { withCredentials: true }
+            );
+
+            if (response.status === 200) {
+                const { checkoutUrl } = response.data;
+                window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+            } else {
+                console.error("Failed to create payment link");
+            }
+        } catch (error) {
+            console.error("Error creating payment link:", error);
+        }
     };
 
     return (
@@ -135,26 +157,31 @@ const MyBookings = () => {
                                         Details
                                     </Button>
                                     {booking.status === "pending" && (
+                                        <>
+                                            <Button className="mx-2"
+                                                variant="danger"
+                                                onClick={() => handleCancelBooking(booking._id)}
+                                            >
+                                                Cancel Booking
+                                            </Button>
 
-                                        <Button className="mx-2"
-                                            variant="danger"
-                                            onClick={() => handleCancelBooking(booking._id)}
-                                        >
-                                            Cancel Booking
-                                        </Button>
-
-
+                                            <Button
+                                                variant="success"
+                                                onClick={() => handlePayment(booking)}
+                                            >
+                                                Pay Now
+                                            </Button>
+                                        </>
                                     )}
-                                    {booking.status === "pending" && (
-
-                                        <Button
-                                            variant="success"
-                                        //    onClick={() => handleCancelBooking(booking._id)}
-                                        >
-                                            Pay Now
+                                    {booking.status === "confirmed" && (
+                                        <Button variant="info" disabled>
+                                            Payment Completed
                                         </Button>
-
-
+                                    )}
+                                    {booking.status === "cancelled" && (
+                                        <Button variant="secondary" disabled>
+                                            Booking Cancelled
+                                        </Button>
                                     )}
                                 </Card.Body>
                             </Card>
