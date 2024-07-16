@@ -30,6 +30,11 @@ const Booking = ({ tour, avgRating }) => {
       restaurantId: ''
    });
 
+   const [errors, setErrors] = useState({
+      guestSize: '',
+      bookAt: '',
+   });
+
    useEffect(() => {
       const fetchData = async () => {
          try {
@@ -54,8 +59,31 @@ const Booking = ({ tour, avgRating }) => {
    }, [tourId]);
 
    const handleChange = e => {
-      setBooking(prev => ({ ...prev, [e.target.id]: e.target.value }));
-      console.log(booking)
+      const { id, value } = e.target;
+
+      setBooking(prev => ({ ...prev, [id]: value }));
+
+      // Validate input fields and set errors
+      if (id === 'guestSize') {
+         if (value < 1) {
+            setErrors(prev => ({ ...prev, guestSize: 'Guest size must be at least 1.' }));
+         } else {
+            setErrors(prev => ({ ...prev, guestSize: '' }));
+         }
+      }
+
+      if (id === 'bookAt') {
+         const bookingDate = new Date(value);
+         const today = new Date();
+         today.setHours(0, 0, 0, 0);
+
+         if (bookingDate < today) {
+            setErrors(prev => ({ ...prev, bookAt: 'Booking date cannot be in the past.' }));
+         } else {
+            setErrors(prev => ({ ...prev, bookAt: '' }));
+         }
+      }
+      console.log(booking);
    }
 
    const handleSelectChange = e => {
@@ -67,8 +95,7 @@ const Booking = ({ tour, avgRating }) => {
       } else if (name === 'restaurantId') {
          setBooking(prev => ({ ...prev, restaurantId: value }));
       }
-      console.log(booking)
-
+      console.log(booking);
    }
 
    const serviceFee = 10;
@@ -78,6 +105,25 @@ const Booking = ({ tour, avgRating }) => {
 
    const handleClick = async e => {
       e.preventDefault();
+
+      // Validate guest size
+      if (booking.guestSize < 1) {
+         return alert('Guest size must be at least 1.');
+      }
+
+      // Validate booking date
+      if (!booking.bookAt) {
+         return alert('Please select a booking date.');
+      }
+
+      // Convert booking date to a Date object for comparison
+      const bookingDate = new Date(booking.bookAt);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Set current time to midnight for accurate comparison
+
+      if (bookingDate < today) {
+         return alert('Booking date cannot be in the past.');
+      }
 
       try {
          if (!user || user === undefined || user === null) {
@@ -128,6 +174,8 @@ const Booking = ({ tour, avgRating }) => {
                   <input type="date" placeholder='' id='bookAt' required onChange={handleChange} />
                   <input type="number" placeholder='Guest' id='guestSize' required onChange={handleChange} />
                </FormGroup>
+               <p className='text-danger'> {errors.bookAt && <small>{errors.bookAt}</small>}</p>
+               <p className='text-danger'>{errors.guestSize && <small >{errors.guestSize}</small>}</p>
                <FormGroup>
                   <label htmlFor="hotel">Select Hotel:</label>
                   <select name="hotelId" id="hotelId" onChange={handleSelectChange} required>

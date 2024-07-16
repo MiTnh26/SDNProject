@@ -40,6 +40,7 @@
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
 }
 
 .button-primary {
@@ -58,6 +59,20 @@
 
 .button-danger:hover {
     background-color: #c82333;
+}
+.status-pending {
+    text-transform: uppercase;
+    color: rgb(197, 197, 13);
+}
+
+.status-confirmed {
+    text-transform: uppercase;
+    color: green;
+}
+
+.status-cancelled {
+    text-transform: uppercase;
+    color: red;
 }
 
 /* Modal Styling */
