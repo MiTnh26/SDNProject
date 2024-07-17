@@ -13,10 +13,10 @@ const router = express.Router();
 router.post("/", createItinerary);
 
 // Update an itinerary by ID
-router.put("/:id", verifyAdmin, updateItinerary);
+router.put("/:id",  updateItinerary);
 
 // Get all itineraries
-router.get("/", verifyUser, getAllItineraries);
+router.get("/",  getAllItineraries);
 
 // Get all itineraries by tour ID
 router.get("/tour/:tourId", getAllItinerariesByTourId);

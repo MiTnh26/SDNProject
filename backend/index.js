@@ -47,7 +47,7 @@ app.use("/api/v1/booking", bookingRoute)
 app.use("/api/v1/hotels", hotelRoute)
 app.use("/api/v1/itinerary", itineraryRoute)
 app.use("/api/v1/restaurants", restaurantRoute)
-app.use("/api/v1/payment", paymentRoute); // Register paymentRoute
+app.use("/api/v1/payment", paymentRoute); 
 
 app.listen(port, () => {
    connect()

@@ -69,3 +69,14 @@ export const getAllUser = async (req, res) => {
       res.status(404).json({ success: false, message: 'Not Found' });
    }
 };
+export const banUser = async (req, res) => {
+   const { id } = req.params;
+   const { status } = req.body;
+   try {
+      const updatedUser = await User.findByIdAndUpdate(id, { status }, { new: true });
+      if (!updatedUser) return res.status(404).json({ message: 'User not found' });
+      res.status(200).json({ success: true, data: updatedUser });
+   } catch (error) {
+      res.status(400).json({ message: error.message });
+   }
+};

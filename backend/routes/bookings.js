@@ -4,12 +4,12 @@ import { verifyAdmin, verifyUser } from '../utils/verifyToken.js'
 
 const router = express.Router()
 
-router.post('/', verifyUser, createBooking)
-router.get('/:id', verifyUser, getBooking)
-router.get('/', verifyUser, getAllBooking)
-router.delete('/:bookingId', verifyUser, deleteBooking)
-router.get('/user/:userId', verifyUser, getAllBookingByUserId)
-router.put("/:bookingId", verifyUser, updateBookingById);
-router.put("/cancel/:bookingId", verifyUser, cancelBookingById);
+router.post('/', createBooking)
+router.get('/:id', getBooking)
+router.get('/',  getAllBooking)
+router.delete('/:bookingId',  deleteBooking)
+router.get('/user/:userId',  getAllBookingByUserId)
+router.put("/:bookingId",  updateBookingById);
+router.put("/cancel/:bookingId", cancelBookingById);
 
 export default router

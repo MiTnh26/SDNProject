@@ -13,10 +13,10 @@ const router = express.Router();
 router.post("/", createHotel);
 
 // Update a hotel by ID
-router.put("/:id", verifyAdmin, updateHotel);
+router.put("/:id", updateHotel);
 
 // Get all hotels
-router.get("/", verifyUser, getAllHotels);
+router.get("/",  getAllHotels);
 
 // Get all hotels by tour ID
 router.get("/tour/:tourId", getAllHotelsByTourId);

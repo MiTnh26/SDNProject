@@ -13,10 +13,10 @@ const router = express.Router();
 router.post("/", createRestaurant);
 
 // Update a restaurant by ID
-router.put("/:id", verifyAdmin, updateRestaurant);
+router.put("/:id",  updateRestaurant);
 
 // Get all restaurants
-router.get("/", verifyUser, getAllRestaurants);
+router.get("/", getAllRestaurants);
 
 // Get all restaurants by tour ID
 router.get("/tour/:tourId", getAllRestaurantsByTourId);

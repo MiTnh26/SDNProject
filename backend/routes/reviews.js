@@ -4,8 +4,8 @@ import { verifyUser } from '../utils/verifyToken.js'
 
 const router = express.Router()
 
-router.post('/:tourId', verifyUser, createReview)
+router.post('/:tourId',  createReview)
 // Route để lấy tất cả các review
-router.get('/', verifyUser, getAllReviews);
+router.get('/',  getAllReviews);
 
 export default router
