@@ -9,6 +9,7 @@
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "date-fns": "^3.6.0",
+    "frontend": "file:",
     "json": "^11.0.0",
     "json-server": "^1.0.0-alpha.23",
     "nanoid": "^5.0.7",
