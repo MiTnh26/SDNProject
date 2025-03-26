@@ -1,18 +1,13 @@
 import express from 'express'
-import { createTour, deleteTour, getAllTour, getFeaturedTour, getSingleTour, getTourBySearch, getTourCount, updateTour } from '../Controllers/tourControllers.js'
+import { getAllTour, getFeaturedTour, getSingleTour, getTourBySearch, getTourCount} from '../Controllers/tourControllers.js'
 
 import { verifyAdmin } from '../utils/verifyToken.js'
 
 const router = express.Router()
 
-//Create new tour 
-router.post('/', createTour)
 
-//Update tour 
-router.put('/:id',  updateTour)
 
-//Delete tour 
-router.delete('/:id', deleteTour)
+
 
 //Get single tour 
 router.get('/:id', getSingleTour)

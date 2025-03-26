@@ -1,12 +1,5 @@
 import Tour from '../models/Tour.js'
 
-//Create new tour
-
-
-//Update Tour
-
-
-//Delete Tour
 
 
 //Getsingle Tour

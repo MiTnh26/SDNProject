@@ -1,9 +1,6 @@
 import Restaurant from "../models/restaurant.js";
 
-// Create a new restaurant
 
-
-// Update a restaurant by ID
 
 
 // Get all restaurants

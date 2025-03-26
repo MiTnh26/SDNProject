@@ -1,10 +1,7 @@
 import Itinerary from "../models/itinerary.js";
 import Tour from "../models/Tour.js";
 
-// Create a new itinerary
 
-
-// Update an itinerary by ID
 
 
 // Get all itineraries

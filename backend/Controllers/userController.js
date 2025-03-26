@@ -21,7 +21,7 @@ export const createUser = async (req, res) => {
    }
 };
 
-// Xóa User
+
 
 
 // Lấy thông tin User đơn lẻ
@@ -36,5 +36,5 @@ export const getSingleUser = async (req, res) => {
    }
 };
 
-// Lấy tất cả Users
+
 

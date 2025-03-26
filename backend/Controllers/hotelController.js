@@ -1,11 +1,6 @@
 import Hotel from "../models/Hotel.js";
 import Tour from "../models/Tour.js";
 
-// Create a new hotel
-
-
-// Update a hotel by ID
-
 
 // Get all hotels
 export const getAllHotels = async (req, res) => {
