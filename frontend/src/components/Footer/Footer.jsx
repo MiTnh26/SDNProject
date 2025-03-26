@@ -120,7 +120,7 @@ const Footer = () => {
                            Email:
                         </h6>
 
-                        <p className='mb-0'>quanghieunguyen.business@fpt.edu.vn</p>
+                        <p className='mb-0'>duylk.business@fpt.edu.vn</p>
                      </ListGroupItem>
 
                      <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
