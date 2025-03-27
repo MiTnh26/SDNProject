@@ -12,7 +12,7 @@ const ContactPage = () => {
             <div className="col-md-6">
               <h2>Thông tin liên hệ</h2>
               <p><strong>Địa chỉ:</strong> Km29, Đại lộ Thăng Long, Hà Nội</p>
-              <p><strong>Email:</strong> lehoang@fpt.edu.vn</p>
+              <p><strong>Email:</strong> duylk@fpt.edu.vn</p>
               <p><strong>Phone:</strong> 0123456789</p>
             </div>
             <div className="col-md-6">
